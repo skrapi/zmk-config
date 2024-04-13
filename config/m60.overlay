@@ -1,0 +1,411 @@
+#include <dt-bindings/led/is31fl3733.h>
+
+/ {
+	chosen {
+        zmk,backlight = &backlight;
+	};
+};
+
+&i2c0 {
+    status = "okay";
+    sda-pin = <37>;
+    scl-pin = <38>;
+
+    backlight: leds@50 {
+        compatible = "lumissil,is31fl3733";
+        reg = <0x50>;
+        label = "backlight";
+        global-current-control = <128>;
+
+        power-gpios = <&gpio1 4 (GPIO_ACTIVE_HIGH)>;
+        auto-breath-mode-1 = <
+            LED_IS31FL3733_T1_0_84
+            LED_IS31FL3733_T2_0
+            LED_IS31FL3733_T3_0_84
+            LED_IS31FL3733_T4_0_84>;
+
+        auto-breath-mode-2 = <
+            LED_IS31FL3733_T1_0_84
+            LED_IS31FL3733_T2_0
+            LED_IS31FL3733_T3_0_84
+            LED_IS31FL3733_T4_0_42>;
+
+        auto-breath-mode-3 = <
+            LED_IS31FL3733_T1_0_42
+            LED_IS31FL3733_T2_0
+            LED_IS31FL3733_T3_0_42
+            LED_IS31FL3733_T4_0_21>;
+
+        led0 {
+            type = "breathing-rgb";
+            channels = <16 0 32>;
+            breath-modes = <0 1 2>;
+        };
+
+        led1 {
+            type = "breathing-rgb";
+            channels = <17 1 33>;
+            breath-modes = <0 1 2>;
+        };
+
+        led2 {
+            type = "breathing-rgb";
+            channels = <18 2 34>;
+            breath-modes = <0 1 2>;
+        };
+
+        led3 {
+            type = "breathing-rgb";
+            channels = <19 3 35>;
+            breath-modes = <0 1 2>;
+        };
+
+        led4 {
+            type = "breathing-rgb";
+            channels = <20 4 36>;
+            breath-modes = <0 1 2>;
+        };
+
+        led5 {
+            type = "breathing-rgb";
+            channels = <21 5 37>;
+            breath-modes = <0 1 2>;
+        };
+
+        led6 {
+            type = "breathing-rgb";
+            channels = <22 6 38>;
+            breath-modes = <0 1 2>;
+        };
+
+        led7 {
+            type = "breathing-rgb";
+            channels = <23 7 39>;
+            breath-modes = <0 1 2>;
+        };
+
+        led8 {
+            type = "breathing-rgb";
+            channels = <24 8 40>;
+            breath-modes = <0 1 2>;
+        };
+
+        led9 {
+            type = "breathing-rgb";
+            channels = <25 9 41>;
+            breath-modes = <0 1 2>;
+        };
+
+        led10 {
+            type = "breathing-rgb";
+            channels = <26 10 42>;
+            breath-modes = <0 1 2>;
+        };
+
+        led11 {
+            type = "breathing-rgb";
+            channels = <27 11 43>;
+            breath-modes = <0 1 2>;
+        };
+
+        led12 {
+            type = "breathing-rgb";
+            channels = <28 12 44>;
+            breath-modes = <0 1 2>;
+        };
+
+        led13 {
+            type = "breathing-rgb";
+            channels = <29 13 45>;
+            breath-modes = <0 1 2>;
+        };
+
+        led14 {
+            type = "breathing-rgb";
+            channels = <30 14 46>;
+            breath-modes = <0 1 2>;
+        };
+
+        led15 {
+            type = "breathing-rgb";
+            channels = <31 15 47>;
+            breath-modes = <0 1 2>;
+        };
+
+        led16 {
+            type = "breathing-rgb";
+            channels = <64 48 80>;
+            breath-modes = <0 1 2>;
+        };
+
+        led17 {
+            type = "breathing-rgb";
+            channels = <65 49 81>;
+            breath-modes = <0 1 2>;
+        };
+
+        led18 {
+            type = "breathing-rgb";
+            channels = <66 50 82>;
+            breath-modes = <0 1 2>;
+        };
+
+        led19 {
+            type = "breathing-rgb";
+            channels = <67 51 83>;
+            breath-modes = <0 1 2>;
+        };
+
+        led20 {
+            type = "breathing-rgb";
+            channels = <68 52 84>;
+            breath-modes = <0 1 2>;
+        };
+
+        led21 {
+            type = "breathing-rgb";
+            channels = <69 53 85>;
+            breath-modes = <0 1 2>;
+        };
+
+        led22 {
+            type = "breathing-rgb";
+            channels = <70 54 86>;
+            breath-modes = <0 1 2>;
+        };
+
+        led23 {
+            type = "breathing-rgb";
+            channels = <71 55 87>;
+            breath-modes = <0 1 2>;
+        };
+
+        led24 {
+            type = "breathing-rgb";
+            channels = <72 56 88>;
+            breath-modes = <0 1 2>;
+        };
+
+        led25 {
+            type = "breathing-rgb";
+            channels = <73 57 89>;
+            breath-modes = <0 1 2>;
+        };
+
+        led26 {
+            type = "breathing-rgb";
+            channels = <74 58 90>;
+            breath-modes = <0 1 2>;
+        };
+
+        led27 {
+            type = "breathing-rgb";
+            channels = <75 59 91>;
+            breath-modes = <0 1 2>;
+        };
+
+        led28 {
+            type = "breathing-rgb";
+            channels = <76 60 92>;
+            breath-modes = <0 1 2>;
+        };
+
+        led29 {
+            type = "breathing-rgb";
+            channels = <77 61 93>;
+            breath-modes = <0 1 2>;
+        };
+
+        led30 {
+            type = "breathing-rgb";
+            channels = <78 62 94>;
+            breath-modes = <0 1 2>;
+        };
+
+        led31 {
+            type = "breathing-rgb";
+            channels = <79 63 95>;
+            breath-modes = <0 1 2>;
+        };
+
+        led32 {
+            type = "breathing-rgb";
+            channels = <112 96 128>;
+            breath-modes = <0 1 2>;
+        };
+
+        led33 {
+            type = "breathing-rgb";
+            channels = <113 97 129>;
+            breath-modes = <0 1 2>;
+        };
+
+        led34 {
+            type = "breathing-rgb";
+            channels = <114 98 130>;
+            breath-modes = <0 1 2>;
+        };
+
+        led35 {
+            type = "breathing-rgb";
+            channels = <115 99 131>;
+            breath-modes = <0 1 2>;
+        };
+
+        led36 {
+            type = "breathing-rgb";
+            channels = <116 100 132>;
+            breath-modes = <0 1 2>;
+        };
+
+        led37 {
+            type = "breathing-rgb";
+            channels = <117 101 133>;
+            breath-modes = <0 1 2>;
+        };
+
+        led38 {
+            type = "breathing-rgb";
+            channels = <118 102 134>;
+            breath-modes = <0 1 2>;
+        };
+
+        led39 {
+            type = "breathing-rgb";
+            channels = <119 103 135>;
+            breath-modes = <0 1 2>;
+        };
+
+        led40 {
+            type = "breathing-rgb";
+            channels = <120 104 136>;
+            breath-modes = <0 1 2>;
+        };
+
+        led41 {
+            type = "breathing-rgb";
+            channels = <121 105 137>;
+            breath-modes = <0 1 2>;
+        };
+
+        led42 {
+            type = "breathing-rgb";
+            channels = <122 106 138>;
+            breath-modes = <0 1 2>;
+        };
+
+        led43 {
+            type = "breathing-rgb";
+            channels = <123 107 139>;
+            breath-modes = <0 1 2>;
+        };
+
+        led44 {
+            type = "breathing-rgb";
+            channels = <124 108 140>;
+            breath-modes = <0 1 2>;
+        };
+
+        led45 {
+            type = "breathing-rgb";
+            channels = <125 109 141>;
+            breath-modes = <0 1 2>;
+        };
+
+        led46 {
+            type = "breathing-rgb";
+            channels = <126 110 142>;
+            breath-modes = <0 1 2>;
+        };
+
+        led47 {
+            type = "breathing-rgb";
+            channels = <127 111 143>;
+            breath-modes = <0 1 2>;
+        };
+
+        led48 {
+            type = "breathing-rgb";
+            channels = <160 144 176>;
+            breath-modes = <0 1 2>;
+        };
+
+        led49 {
+            type = "breathing-rgb";
+            channels = <161 145 177>;
+            breath-modes = <0 1 2>;
+        };
+
+        led50 {
+            type = "breathing-rgb";
+            channels = <162 146 178>;
+            breath-modes = <0 1 2>;
+        };
+
+        led51 {
+            type = "breathing-rgb";
+            channels = <163 147 179>;
+            breath-modes = <0 1 2>;
+        };
+
+        led52 {
+            type = "breathing-rgb";
+            channels = <164 148 180>;
+            breath-modes = <0 1 2>;
+        };
+
+        led53 {
+            type = "breathing-rgb";
+            channels = <165 149 181>;
+            breath-modes = <0 1 2>;
+        };
+
+        led54 {
+            type = "breathing-rgb";
+            channels = <166 150 182>;
+            breath-modes = <0 1 2>;
+        };
+
+        led55 {
+            type = "breathing-rgb";
+            channels = <167 151 183>;
+            breath-modes = <0 1 2>;
+        };
+
+        led56 {
+            type = "breathing-rgb";
+            channels = <168 152 184>;
+            breath-modes = <0 1 2>;
+        };
+
+        led57 {
+            type = "breathing-rgb";
+            channels = <169 153 185>;
+            breath-modes = <0 1 2>;
+        };
+
+        led58 {
+            type = "breathing-rgb";
+            channels = <170 154 186>;
+            breath-modes = <0 1 2>;
+        };
+
+        led59 {
+            type = "breathing-rgb";
+            channels = <171 155 187>;
+            breath-modes = <0 1 2>;
+        };
+
+        led60 {
+            type = "breathing-rgb";
+            channels = <172 156 188>;
+            breath-modes = <0 1 2>;
+        };
+
+        led61 {
+            type = "breathing-rgb";
+            channels = <173 157 189>;
+            breath-modes = <0 1 2>;
+        };
+    };
+};
